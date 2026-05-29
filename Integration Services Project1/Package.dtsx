@@ -11,33 +11,68 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{6A1A75B2-5FE5-4213-A325-73FDCCEAADED}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{09BF8CDA-62EC-4B20-84F3-53ECAC2FB592}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{8AE6F7E7-9C5D-4DFC-B8CE-32B6054E5C64}"
-      DTS:ObjectName="Administrador de conexiones con Excel">
+      DTS:refId="Package.ConnectionManagers[Products]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C1A1C5AB-88D9-4D08-BB96-2AE6EB1C435A}"
+      DTS:ObjectName="Products">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Employee.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\TEMP\TPBBDD2\Area Produccion\Products.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODUCT_ID"
+              DTS:DTSID="{A99B8373-8E93-4C59-A737-ABB4BD5EBEFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DETAIL"
+              DTS:DTSID="{EB7DA91E-04F4-4BF1-8DD0-D933513B1CB9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PACKAGE"
+              DTS:DTSID="{0ACDCEA7-5FBA-47E2-A420-C5ABFB33DDD9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{B8B1102B-CB2B-476F-A037-39C057F603A7}"
-      DTS:ObjectName="Administrador de conexiones con Excel 1">
+      DTS:refId="Package.ConnectionManagers[SANTIPC.TDC_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5FB145C7-8145-40C4-A622-5596462CD169}"
+      DTS:ObjectName="SANTIPC.TDC_Staging">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Employee.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SANTIPC;Initial Catalog=TDC_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{5FB145C7-8145-40C4-A622-5596462CD169}SANTIPC.TDC_Staging;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -58,222 +93,143 @@
           version="1">
           <components>
             <component
-              refId="Package\Tarea Flujo de datos\Origen de Excel"
-              componentClassID="Microsoft.ExcelSource"
-              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
-              description="Origen de Excel"
-              name="Origen de Excel"
+              refId="Package\Tarea Flujo de datos\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
               usesDispositions="true"
-              version="1">
+              version="4">
               <properties>
                 <property
                   dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
                   name="CommandTimeout">0</property>
                 <property
                   dataType="System.String"
-                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
-                  name="OpenRowset">Employee$</property>
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stg_Products]</property>
                 <property
                   dataType="System.String"
-                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
                   name="OpenRowsetVariable"></property>
                 <property
                   dataType="System.String"
-                  description="Comando SQL para ejecutar."
+                  description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
-                  dataType="System.String"
-                  description="Variable que contiene el comando SQL para ejecutar."
-                  name="SqlCommandVariable"></property>
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
                 <property
                   dataType="System.Int32"
-                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
                 <property
                   dataType="System.String"
-                  description="La asignación de parámetros del comando SQL a variables."
-                  name="ParameterMapping"></property>
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tarea Flujo de datos\Origen de Excel.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
-                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
-                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  refId="Package\Tarea Flujo de datos\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SANTIPC.TDC_Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[SANTIPC.TDC_Staging]"
+                  description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel]"
-                  name="Salida de origen de Excel">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EMPLOYEE_ID]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYEE_ID]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EMPLOYEE_ID]"
-                      name="EMPLOYEE_ID"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[FULL_NAME]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[FULL_NAME]"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[FULL_NAME]"
-                      name="FULL_NAME"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CATEGORY]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CATEGORY]"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CATEGORY]"
-                      name="CATEGORY"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EMPLOYMENT_DATE]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYMENT_DATE]"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EMPLOYMENT_DATE]"
-                      name="EMPLOYMENT_DATE"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[BIRTH_DATE]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[BIRTH_DATE]"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[BIRTH_DATE]"
-                      name="BIRTH_DATE"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EDUCATION_LEVEL]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EDUCATION_LEVEL]"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EDUCATION_LEVEL]"
-                      name="EDUCATION_LEVEL"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[GENDER]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[GENDER]"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[GENDER]"
-                      name="GENDER"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRODUCT_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRODUCT_ID"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[PRODUCT_ID]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DETAIL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DETAIL"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DETAIL]"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[DETAIL]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PACKAGE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PACKAGE"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PACKAGE]"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[PACKAGE]" />
+                  </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYEE_ID]"
-                      dataType="r8"
-                      name="EMPLOYEE_ID" />
+                      refId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PRODUCT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRODUCT_ID" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[FULL_NAME]"
-                      dataType="wstr"
-                      length="255"
-                      name="FULL_NAME" />
+                      refId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DETAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DETAIL" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CATEGORY]"
-                      dataType="wstr"
-                      length="255"
-                      name="CATEGORY" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYMENT_DATE]"
-                      dataType="wstr"
-                      length="255"
-                      name="EMPLOYMENT_DATE" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[BIRTH_DATE]"
-                      dataType="wstr"
-                      length="255"
-                      name="BIRTH_DATE" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EDUCATION_LEVEL]"
-                      dataType="wstr"
-                      length="255"
-                      name="EDUCATION_LEVEL" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[GENDER]"
-                      dataType="wstr"
-                      length="255"
-                      name="GENDER" />
+                      refId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PACKAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PACKAGE" />
                   </externalMetadataColumns>
-                </output>
+                </input>
+              </inputs>
+              <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel]"
+                  refId="Package\Tarea Flujo de datos\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
                   isErrorOut="true"
-                  name="Salida de error de origen de Excel">
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EMPLOYEE_ID]"
-                      dataType="r8"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EMPLOYEE_ID]"
-                      name="EMPLOYEE_ID" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[FULL_NAME]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[FULL_NAME]"
-                      name="FULL_NAME" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CATEGORY]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CATEGORY]"
-                      name="CATEGORY" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EMPLOYMENT_DATE]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EMPLOYMENT_DATE]"
-                      name="EMPLOYMENT_DATE" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[BIRTH_DATE]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[BIRTH_DATE]"
-                      name="BIRTH_DATE" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EDUCATION_LEVEL]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EDUCATION_LEVEL]"
-                      name="EDUCATION_LEVEL" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[GENDER]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[GENDER]"
-                      name="GENDER" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      refId="Package\Tarea Flujo de datos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      lineageId="Package\Tarea Flujo de datos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      refId="Package\Tarea Flujo de datos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      lineageId="Package\Tarea Flujo de datos\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -282,73 +238,173 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Origen XML"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
-              name="Origen XML"
+              refId="Package\Tarea Flujo de datos\Products"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Products"
               usesDispositions="true"
-              version="2">
+              version="1">
               <properties>
                 <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
                   dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
-                <property
-                  dataType="System.Null"
-                  description="Datos XML que usa el adaptador de origen XML."
-                  expressionType="Notify"
-                  name="XMLData" />
-                <property
-                  dataType="System.Null"
-                  description="Variable que usa el adaptador de origen XML para especificar datos XML."
-                  name="XMLDataVariable" />
-                <property
-                  dataType="System.Int32"
-                  description="Define cómo obtiene el adaptador de origen XML los datos XML."
-                  name="AccessMode">0</property>
-                <property
-                  dataType="System.Null"
-                  description="Definición de esquema XML que usa el adaptador de origen XML."
-                  expressionType="Notify"
-                  name="XMLSchemaDefinition" />
-                <property
-                  dataType="System.Null"
-                  description="Identifica si se usará el esquema insertado."
-                  name="UseInlineSchema" />
-                <property
-                  dataType="System.Int32"
-                  description="Define cómo se asignan los tipos de enteros XML."
-                  name="XMLIntegerMapping"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
               </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Products.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Products]"
+                  connectionManagerRefId="Package.ConnectionManagers[Products]"
+                  name="FlatFileConnection" />
+              </connections>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de origen XML]"
-                  dangling="true"
-                  name="Salida de origen XML">
-                  <properties>
-                    <property
-                      dataType="System.Null"
-                      description="Identifica el conjunto de filas asociado a la salida."
-                      name="RowsetID" />
-                  </properties>
+                  refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[PRODUCT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].ExternalColumns[PRODUCT_ID]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[PRODUCT_ID]"
+                      name="PRODUCT_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[DETAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].ExternalColumns[DETAIL]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[DETAIL]"
+                      name="DETAIL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[PACKAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].ExternalColumns[PACKAGE]"
+                      length="50"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].Columns[PACKAGE]"
+                      name="PACKAGE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
                   <externalMetadataColumns
-                    isUsed="True" />
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].ExternalColumns[PRODUCT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRODUCT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].ExternalColumns[DETAIL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DETAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output].ExternalColumns[PACKAGE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PACKAGE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
           </components>
+          <paths>
+            <path
+              refId="Package\Tarea Flujo de datos.Paths[Flat File Source Output]"
+              endId="Package\Tarea Flujo de datos\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Tarea Flujo de datos\Products.Outputs[Flat File Source Output]" />
+          </paths>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -365,20 +421,42 @@
     design-time-name="Package\Tarea Flujo de datos">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="153,74"
-          Id="Package\Tarea Flujo de datos\Origen de Excel"
-          TopLeft="187,205" />
+          Size="122,42"
+          Id="Package\Tarea Flujo de datos\Products"
+          TopLeft="262,176" />
         <NodeLayout
-          Size="133,42"
-          Id="Package\Tarea Flujo de datos\Origen XML"
-          TopLeft="404,221" />
+          Size="177,42"
+          Id="Package\Tarea Flujo de datos\OLE DB Destination"
+          TopLeft="232,317" />
+        <EdgeLayout
+          Id="Package\Tarea Flujo de datos.Paths[Flat File Source Output]"
+          TopLeft="321.75,218">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,99"
+              Start="0,0"
+              End="0,91.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen de Excel">
+    design-time-name="Package\Tarea Flujo de datos\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
