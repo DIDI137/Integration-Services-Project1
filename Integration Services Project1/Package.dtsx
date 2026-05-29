@@ -11,23 +11,11 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{6A1A75B2-5FE5-4213-A325-73FDCCEAADED}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{4F4EC3A5-AE99-4ED0-98E2-2491AA50BB1D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{8AE6F7E7-9C5D-4DFC-B8CE-32B6054E5C64}"
-      DTS:ObjectName="Administrador de conexiones con Excel">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="0"
-          DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Employee.xls;Extended Properties=&quot;EXCEL 8.0;HDR=YES&quot;;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
       DTS:CreationName="EXCEL"
@@ -38,6 +26,18 @@
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
           DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Employee.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{16045BC5-1A52-44F5-86DB-52BCCB09C271}"
+      DTS:ObjectName="Administrador de conexiones con Excel 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Holidays.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -58,11 +58,279 @@
           version="1">
           <components>
             <component
-              refId="Package\Tarea Flujo de datos\Origen de Excel"
+              refId="Package\Tarea Flujo de datos\Clientes XML"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
+              name="Clientes XML"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="Datos XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLData">C:\TEMP\TPBBDD2\Integration Services Project1\Area Comercializacion\Customer_R.xml</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que usa el adaptador de origen XML para especificar datos XML."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo obtiene el adaptador de origen XML los datos XML."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Definición de esquema XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">C:\TEMP\TPBBDD2\Integration Services Project1\Area Comercializacion\Customer_R.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifica si se usará el esquema insertado."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo se asignan los tipos de enteros XML."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente]"
+                  name="cliente">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">cliente</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[FULL_NAME]"
+                      name="FULL_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[CITY]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[STATE]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[ZIPCODE]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].Columns[ZIPCODE]"
+                      name="ZIPCODE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      dataType="ui2"
+                      name="CUSTOMER_ID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="FULL_NAME">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="BIRTH_DATE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      dataType="ui4"
+                      name="ZIPCODE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente]"
+                  isErrorOut="true"
+                  name="Salida de error de cliente">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">cliente</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      name="FULL_NAME" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      name="ZIPCODE" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      dataType="nText"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      dataType="nText"
+                      name="FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      dataType="nText"
+                      name="BIRTH_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      dataType="nText"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      dataType="nText"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Clientes XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      dataType="nText"
+                      name="ZIPCODE" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Exel de Empleados"
               componentClassID="Microsoft.ExcelSource"
               contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
               description="Origen de Excel"
-              name="Origen de Excel"
+              name="Exel de Empleados"
               usesDispositions="true"
               version="1">
               <properties>
@@ -99,7 +367,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tarea Flujo de datos\Origen de Excel.Connections[OleDbConnection]"
+                  refId="Package\Tarea Flujo de datos\Exel de Empleados.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
                   connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 1]"
                   description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
@@ -107,173 +375,173 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel]"
+                  refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel]"
                   name="Salida de origen de Excel">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EMPLOYEE_ID]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[EMPLOYEE_ID]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYEE_ID]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EMPLOYEE_ID]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYEE_ID]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[EMPLOYEE_ID]"
                       name="EMPLOYEE_ID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[FULL_NAME]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[FULL_NAME]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[FULL_NAME]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[FULL_NAME]"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[FULL_NAME]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[FULL_NAME]"
                       name="FULL_NAME"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CATEGORY]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[CATEGORY]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CATEGORY]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[CATEGORY]"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[CATEGORY]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[CATEGORY]"
                       name="CATEGORY"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EMPLOYMENT_DATE]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[EMPLOYMENT_DATE]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYMENT_DATE]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYMENT_DATE]"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EMPLOYMENT_DATE]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[EMPLOYMENT_DATE]"
                       name="EMPLOYMENT_DATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[BIRTH_DATE]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[BIRTH_DATE]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[BIRTH_DATE]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[BIRTH_DATE]"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[BIRTH_DATE]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[BIRTH_DATE]"
                       name="BIRTH_DATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EDUCATION_LEVEL]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[EDUCATION_LEVEL]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EDUCATION_LEVEL]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[EDUCATION_LEVEL]"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[EDUCATION_LEVEL]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[EDUCATION_LEVEL]"
                       name="EDUCATION_LEVEL"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[GENDER]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[GENDER]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[GENDER]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[GENDER]"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].Columns[GENDER]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].Columns[GENDER]"
                       name="GENDER"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYEE_ID]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYEE_ID]"
                       dataType="r8"
                       name="EMPLOYEE_ID" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[FULL_NAME]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[FULL_NAME]"
                       dataType="wstr"
                       length="255"
                       name="FULL_NAME" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[CATEGORY]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[CATEGORY]"
                       dataType="wstr"
                       length="255"
                       name="CATEGORY" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYMENT_DATE]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[EMPLOYMENT_DATE]"
                       dataType="wstr"
                       length="255"
                       name="EMPLOYMENT_DATE" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[BIRTH_DATE]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[BIRTH_DATE]"
                       dataType="wstr"
                       length="255"
                       name="BIRTH_DATE" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[EDUCATION_LEVEL]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[EDUCATION_LEVEL]"
                       dataType="wstr"
                       length="255"
                       name="EDUCATION_LEVEL" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de origen de Excel].ExternalColumns[GENDER]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de origen de Excel].ExternalColumns[GENDER]"
                       dataType="wstr"
                       length="255"
                       name="GENDER" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel]"
+                  refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel]"
                   isErrorOut="true"
                   name="Salida de error de origen de Excel">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EMPLOYEE_ID]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[EMPLOYEE_ID]"
                       dataType="r8"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EMPLOYEE_ID]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[EMPLOYEE_ID]"
                       name="EMPLOYEE_ID" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[FULL_NAME]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[FULL_NAME]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[FULL_NAME]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[FULL_NAME]"
                       name="FULL_NAME" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CATEGORY]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[CATEGORY]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[CATEGORY]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[CATEGORY]"
                       name="CATEGORY" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EMPLOYMENT_DATE]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[EMPLOYMENT_DATE]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EMPLOYMENT_DATE]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[EMPLOYMENT_DATE]"
                       name="EMPLOYMENT_DATE" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[BIRTH_DATE]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[BIRTH_DATE]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[BIRTH_DATE]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[BIRTH_DATE]"
                       name="BIRTH_DATE" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EDUCATION_LEVEL]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[EDUCATION_LEVEL]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[EDUCATION_LEVEL]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[EDUCATION_LEVEL]"
                       name="EDUCATION_LEVEL" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[GENDER]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[GENDER]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[GENDER]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[GENDER]"
                       name="GENDER" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      refId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de Excel.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de Empleados.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -282,58 +550,121 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Origen XML"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
-              name="Origen XML"
+              refId="Package\Tarea Flujo de datos\Exel de VACACIONES"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origen de Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de Excel"
+              name="Exel de VACACIONES"
               usesDispositions="true"
-              version="2">
+              version="1">
               <properties>
                 <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
                   dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">Holidays$</property>
                 <property
-                  dataType="System.Null"
-                  description="Datos XML que usa el adaptador de origen XML."
-                  expressionType="Notify"
-                  name="XMLData" />
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
                 <property
-                  dataType="System.Null"
-                  description="Variable que usa el adaptador de origen XML para especificar datos XML."
-                  name="XMLDataVariable" />
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
-                  dataType="System.Int32"
-                  description="Define cómo obtiene el adaptador de origen XML los datos XML."
-                  name="AccessMode">0</property>
-                <property
-                  dataType="System.Null"
-                  description="Definición de esquema XML que usa el adaptador de origen XML."
-                  expressionType="Notify"
-                  name="XMLSchemaDefinition" />
-                <property
-                  dataType="System.Null"
-                  description="Identifica si se usará el esquema insertado."
-                  name="UseInlineSchema" />
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
                 <property
                   dataType="System.Int32"
-                  description="Define cómo se asignan los tipos de enteros XML."
-                  name="XMLIntegerMapping"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="La asignación de parámetros del comando SQL a variables."
+                  name="ParameterMapping"></property>
               </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones con Excel 2]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen XML.Outputs[Salida de origen XML]"
-                  dangling="true"
-                  name="Salida de origen XML">
-                  <properties>
-                    <property
-                      dataType="System.Null"
-                      description="Identifica el conjunto de filas asociado a la salida."
-                      name="RowsetID" />
-                  </properties>
+                  refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel]"
+                  name="Salida de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel].Columns[DATE]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel].ExternalColumns[DATE]"
+                      lineageId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel].Columns[DATE]"
+                      name="DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel].Columns[HOLIDAY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel].ExternalColumns[HOLIDAY]"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel].Columns[HOLIDAY]"
+                      name="HOLIDAY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
                   <externalMetadataColumns
-                    isUsed="True" />
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel].ExternalColumns[DATE]"
+                      dataType="date"
+                      name="DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de origen de Excel].ExternalColumns[HOLIDAY]"
+                      dataType="wstr"
+                      length="255"
+                      name="HOLIDAY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel].Columns[DATE]"
+                      dataType="date"
+                      lineageId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel].Columns[DATE]"
+                      name="DATE" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel].Columns[HOLIDAY]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel].Columns[HOLIDAY]"
+                      name="HOLIDAY" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Exel de VACACIONES.Outputs[Salida de error de origen de Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
@@ -367,18 +698,35 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="153,74"
-          Id="Package\Tarea Flujo de datos\Origen de Excel"
-          TopLeft="187,205" />
+          Size="167,42"
+          Id="Package\Tarea Flujo de datos\Exel de Empleados"
+          TopLeft="258,203" />
         <NodeLayout
-          Size="133,42"
-          Id="Package\Tarea Flujo de datos\Origen XML"
-          TopLeft="404,221" />
+          Size="139,42"
+          Id="Package\Tarea Flujo de datos\Clientes XML"
+          TopLeft="488,221" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Tarea Flujo de datos\Exel de VACACIONES"
+          TopLeft="61,207" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen de Excel">
+    design-time-name="Package\Tarea Flujo de datos\Exel de Empleados">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Exel de VACACIONES">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
