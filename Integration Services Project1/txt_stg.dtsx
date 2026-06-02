@@ -1,0 +1,1363 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/2/2026 4:27:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-LO8Q0MV"
+  DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
+  DTS:DTSID="{8CCE3B4B-E959-4064-AF5D-1EEEA949A79E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="txt_stg"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{D8BBCCDF-BEAE-4E04-96A0-7C895DD9D93A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[BD2TP]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{18E4346C-0D7D-47ED-BFE3-3294A42CD4A3}"
+      DTS:ObjectName="BD2TP">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-txt_stg-{18E4346C-0D7D-47ED-BFE3-3294A42CD4A3}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[products_txt_source]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C4463B45-BCC2-40E5-8429-1D2640F7A494}"
+      DTS:ObjectName="products_txt_source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="A:\Integration-Services-Project1\Area Produccion\Products.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="producto_id"
+              DTS:DTSID="{62B0A21F-DEB3-4DFC-810A-3B91F6861999}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="detalle"
+              DTS:DTSID="{CFE81EC8-3681-4319-91B2-6B628E249D73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="volumen"
+              DTS:DTSID="{ED8C28E9-13C1-4AE6-9C06-CFB693A426AE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[regions_txt_source]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{81AE97FA-8387-4D5F-A776-EE190E02C579}"
+      DTS:ObjectName="regions_txt_source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="A:\Integration-Services-Project1\Area comercializacion\Regions.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="region"
+              DTS:DTSID="{651CD9AF-842A-4624-904E-22996E63E99F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="estado"
+              DTS:DTSID="{A55E14F8-D56E-428F-BC85-4699AFA42532}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ciudad"
+              DTS:DTSID="{615E42BB-932F-4918-BECE-F80E780CE463}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="codigo_postal"
+              DTS:DTSID="{7CFEC19C-1D00-4E55-ADC2-CE59124E7183}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[stock_txt_source]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{8029286F-2342-46A9-B07F-84724DD8F6FF}"
+      DTS:ObjectName="stock_txt_source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="A:\Integration-Services-Project1\Area Produccion\Stock.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="producto_id"
+              DTS:DTSID="{1A9B926E-DA95-4BFC-875B-F86A68708067}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fecha"
+              DTS:DTSID="{17198E0F-157B-46D0-B2CD-89347E9C1F38}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="variacion"
+              DTS:DTSID="{87D8A403-0953-46CC-A749-E28FE0760003}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga de datos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{FA0B553B-CD67-42D3-84D6-A409B6297D23}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga de datos"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga de datos\products_stg"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="products_stg"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[products_stg]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga de datos\products_stg.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].Columns[producto_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="producto_id"
+                      externalMetadataColumnId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].ExternalColumns[producto_id]"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[producto_id]" />
+                    <inputColumn
+                      refId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].Columns[detalle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="detalle"
+                      externalMetadataColumnId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].ExternalColumns[detalle]"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[detalle]" />
+                    <inputColumn
+                      refId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].Columns[volumen]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="volumen"
+                      externalMetadataColumnId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].ExternalColumns[volumen]"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[volumen]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].ExternalColumns[producto_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="producto_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].ExternalColumns[detalle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="detalle" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input].ExternalColumns[volumen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="volumen" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga de datos\products_stg.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\products_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\products_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga de datos\products_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\products_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga de datos\products_txt_source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="products_txt_source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga de datos\products_txt_source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[products_txt_source]"
+                  connectionManagerRefId="Package.ConnectionManagers[products_txt_source]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[producto_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].ExternalColumns[producto_id]"
+                      length="50"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[producto_id]"
+                      name="producto_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[detalle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].ExternalColumns[detalle]"
+                      length="50"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[detalle]"
+                      name="detalle"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[volumen]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].ExternalColumns[volumen]"
+                      length="50"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].Columns[volumen]"
+                      name="volumen"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].ExternalColumns[producto_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="producto_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].ExternalColumns[detalle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="detalle" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output].ExternalColumns[volumen]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="volumen" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga de datos\regions_stg"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="regions_stg"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[regions_stg]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga de datos\regions_stg.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].Columns[region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="region"
+                      externalMetadataColumnId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[region]" />
+                    <inputColumn
+                      refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].Columns[estado]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="estado"
+                      externalMetadataColumnId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].ExternalColumns[estado]"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[estado]" />
+                    <inputColumn
+                      refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].Columns[ciudad]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ciudad"
+                      externalMetadataColumnId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].ExternalColumns[ciudad]"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[ciudad]" />
+                    <inputColumn
+                      refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].Columns[codigo_postal]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="codigo_postal"
+                      externalMetadataColumnId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].ExternalColumns[codigo_postal]"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[codigo_postal]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].ExternalColumns[estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].ExternalColumns[ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input].ExternalColumns[codigo_postal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="codigo_postal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga de datos\regions_stg.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\regions_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\regions_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga de datos\regions_txt_source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="regions_txt_source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga de datos\regions_txt_source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[regions_txt_source]"
+                  connectionManagerRefId="Package.ConnectionManagers[regions_txt_source]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      length="50"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[region]"
+                      name="region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[estado]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].ExternalColumns[estado]"
+                      length="50"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[estado]"
+                      name="estado"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].ExternalColumns[ciudad]"
+                      length="50"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[ciudad]"
+                      name="ciudad"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[codigo_postal]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].ExternalColumns[codigo_postal]"
+                      length="50"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].Columns[codigo_postal]"
+                      name="codigo_postal"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].ExternalColumns[region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="region" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].ExternalColumns[estado]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].ExternalColumns[ciudad]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output].ExternalColumns[codigo_postal]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="codigo_postal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga de datos\stock_stg"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="stock_stg"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stock_stg]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga de datos\stock_stg.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].Columns[producto_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="producto_id"
+                      externalMetadataColumnId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].ExternalColumns[producto_id]"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[producto_id]" />
+                    <inputColumn
+                      refId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].Columns[fecha]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="fecha"
+                      externalMetadataColumnId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[fecha]" />
+                    <inputColumn
+                      refId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].Columns[variacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="variacion"
+                      externalMetadataColumnId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].ExternalColumns[variacion]"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[variacion]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].ExternalColumns[producto_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="producto_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].ExternalColumns[fecha]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input].ExternalColumns[variacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="variacion" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga de datos\stock_stg.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\stock_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\stock_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga de datos\stock_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\stock_stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga de datos\stock_txt_source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="stock_txt_source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga de datos\stock_txt_source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[stock_txt_source]"
+                  connectionManagerRefId="Package.ConnectionManagers[stock_txt_source]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[producto_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].ExternalColumns[producto_id]"
+                      length="50"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[producto_id]"
+                      name="producto_id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[fecha]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].ExternalColumns[fecha]"
+                      length="50"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[fecha]"
+                      name="fecha"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[variacion]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].ExternalColumns[variacion]"
+                      length="50"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].Columns[variacion]"
+                      name="variacion"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].ExternalColumns[producto_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="producto_id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].ExternalColumns[fecha]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fecha" />
+                    <externalMetadataColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output].ExternalColumns[variacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="variacion" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga de datos.Paths[Flat File Source Output]"
+              endId="Package\Carga de datos\products_stg.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Carga de datos\products_txt_source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Carga de datos.Paths[Flat File Source Output1]"
+              endId="Package\Carga de datos\stock_stg.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Carga de datos\stock_txt_source.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Carga de datos.Paths[Flat File Source Output2]"
+              endId="Package\Carga de datos\regions_stg.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Carga de datos\regions_txt_source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E468EDA5-A043-4856-8A58-4AA37DC02FE9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{18E4346C-0D7D-47ED-BFE3-3294A42CD4A3}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.products_stg;&#xA;TRUNCATE TABLE dbo.stock_stg;&#xA;TRUNCATE TABLE dbo.regions_stg;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{9D8CB637-54E5-4D48-A10A-D16D074D8F83}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Carga de datos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Carga de datos"
+          TopLeft="159,127" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="167,17" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="252,59">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-16,68"
+              Start="0,0"
+              End="-16,60.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30"
+                    Point2="0,34"
+                    Point3="-4,34" />
+                  <mssgle:LineSegment
+                    End="-12,34" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12,34"
+                    Point2="-16,34"
+                    Point3="-16,38" />
+                  <mssgle:LineSegment
+                    End="-16,60.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga de datos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Carga de datos\products_stg"
+          TopLeft="209,290" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Carga de datos\products_txt_source"
+          TopLeft="188,113" />
+        <EdgeLayout
+          Id="Package\Carga de datos.Paths[Flat File Source Output]"
+          TopLeft="278.5,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,135"
+              Start="0,0"
+              End="0,127.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,127.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Carga de datos\stock_txt_source"
+          TopLeft="379,113" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Carga de datos\stock_stg"
+          TopLeft="399,292" />
+        <EdgeLayout
+          Id="Package\Carga de datos.Paths[Flat File Source Output1]"
+          TopLeft="460.5,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,137"
+              Start="0,0"
+              End="0,129.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,129.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Carga de datos\regions_txt_source"
+          TopLeft="575,115" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Carga de datos\regions_stg"
+          TopLeft="597,294" />
+        <EdgeLayout
+          Id="Package\Carga de datos.Paths[Flat File Source Output2]"
+          TopLeft="663,157">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,137"
+              Start="0,0"
+              End="0,129.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,129.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de datos\products_stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de datos\stock_stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga de datos\regions_stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
