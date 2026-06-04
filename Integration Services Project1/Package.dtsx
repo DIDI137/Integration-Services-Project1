@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{4F4EC3A5-AE99-4ED0-98E2-2491AA50BB1D}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{D4927816-7E32-4DC5-A507-04274552CEC2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Employee.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Employee.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,12 +37,151 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Holidays.xls;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=C:\TEMP\TPBBDD2\Integration Services Project1\Area Recursos Humanos\Holidays.xls;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[TPBBDD2.alumno]"
+      DTS:CreationName="ODBC"
+      DTS:DTSID="{8E794B69-1459-4CE4-A957-8125D318E991}"
+      DTS:ObjectName="TPBBDD2.alumno">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="uid=alumno;Dsn=TPBBDD2;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAiNpwpcVVECHlxE/G1ZhdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC0Vb4HoTatc5FHArRLeD+vx6oUCMILydCDqiCWPzuAYgAAAAAOgAAAAAIAACAAAAA9fm/WOtHXo4RTkh/7Od6Nmq/NErQkteS/1jLpY3ITLCAAAADTL+udd2z63Sroc0u/yqmrhQZHBxSZ4Ken9NpMERv7wkAAAADOFsNu1KwQjoVdGwrthsERvTLT2moW44XZaBW1wyw4cjI0iYlviPblHagCQJ8j3uAmtLwTiDD2DPJdiqVi2Jcw</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Base de datos Mysql"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{6FCE362B-AA2E-4871-A5F7-1350D16A3218}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Base de datos Mysql"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Base de datos Mysql\Origen ODBC"
+              componentClassID="Microsoft.SSISODBCSrc"
+              contactInfo="Origen ODBC;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen ODBC"
+              name="Origen ODBC"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla que debe recuperarse."
+                  expressionType="Notify"
+                  name="TableName"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=17.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas recuperadas por lote."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determina la asignación del tamaño de los fragmentos de las columnas LOB"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determina la manera en la que el componente expone las columnas CHAR. Si es False, las columnas CHAR se exponen como cadenas byte o multibyte (DT_STR); si es True, las columnas CHAR se exponen como cadenas de tipo ancho (DT_WSTR)."
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos que se debe esperar para que una instrucción SQL se ejecute antes de volver a la aplicación."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Página de códigos que se usará cuando la información de la página de códigos no esté disponible en el origen de datos."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Método usado para recuperar datos."
+                  expressionType="Notify"
+                  name="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Tipo de datos ODBC C para el enlace de datos numéricos."
+                  expressionType="Notify"
+                  name="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determina la manera en la que el componente enlazará columnas de tipos de cadena byte o multibyte (es decir, SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). Las opciones son Unicode (SQL_C_WCHAR) y ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Modo usado para obtener acceso a la base de datos."
+                  expressionType="Notify"
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Base de datos Mysql\Origen ODBC.Connections[ODBCConnection]"
+                  connectionManagerID="Package.ConnectionManagers[TPBBDD2.alumno]"
+                  connectionManagerRefId="Package.ConnectionManagers[TPBBDD2.alumno]"
+                  description="Conexión de runtime de ODBC usada para acceder a la base de datos."
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Base de datos Mysql\Origen ODBC.Outputs[Salida de origen de ODBC]"
+                  errorRowDisposition="FailComponent"
+                  name="Salida de origen de ODBC"
+                  truncationRowDisposition="FailComponent">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </output>
+                <output
+                  refId="Package\Base de datos Mysql\Origen ODBC.Outputs[Salida de error de origen de ODBC]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ODBC">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Base de datos Mysql\Origen ODBC.Outputs[Salida de error de origen de ODBC].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Base de datos Mysql\Origen ODBC.Outputs[Salida de error de origen de ODBC].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Base de datos Mysql\Origen ODBC.Outputs[Salida de error de origen de ODBC].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Base de datos Mysql\Origen ODBC.Outputs[Salida de error de origen de ODBC].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Tarea Flujo de datos"
       DTS:CreationName="Microsoft.Pipeline"
@@ -689,6 +828,10 @@
           Size="176,42"
           Id="Package\Tarea Flujo de datos"
           TopLeft="173,142" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Base de datos Mysql"
+          TopLeft="301,302" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -702,13 +845,13 @@
           Id="Package\Tarea Flujo de datos\Exel de Empleados"
           TopLeft="258,203" />
         <NodeLayout
-          Size="139,42"
-          Id="Package\Tarea Flujo de datos\Clientes XML"
-          TopLeft="488,221" />
-        <NodeLayout
           Size="179,42"
           Id="Package\Tarea Flujo de datos\Exel de VACACIONES"
           TopLeft="61,207" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Tarea Flujo de datos\Clientes XML"
+          TopLeft="488,221" />
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -735,6 +878,26 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Base de datos Mysql">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Base de datos Mysql\Origen ODBC"
+          TopLeft="317,331" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Base de datos Mysql\Origen ODBC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
