@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{D4927816-7E32-4DC5-A507-04274552CEC2}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{57645C78-EA17-49B3-9B34-D628E8529EDC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -51,7 +51,7 @@
           <DTS:Password
             DTS:Name="pwd"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAiNpwpcVVECHlxE/G1ZhdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC0Vb4HoTatc5FHArRLeD+vx6oUCMILydCDqiCWPzuAYgAAAAAOgAAAAAIAACAAAAA9fm/WOtHXo4RTkh/7Od6Nmq/NErQkteS/1jLpY3ITLCAAAADTL+udd2z63Sroc0u/yqmrhQZHBxSZ4Ken9NpMERv7wkAAAADOFsNu1KwQjoVdGwrthsERvTLT2moW44XZaBW1wyw4cjI0iYlviPblHagCQJ8j3uAmtLwTiDD2DPJdiqVi2Jcw</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAiNpwpcVVECHlxE/G1ZhdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACrR6qJZiRQ1+VkbgdDCElTB/qf3YdG0Iry6w0H8FlBEgAAAAAOgAAAAAIAACAAAACgOpPd/45aCpVMdENpdEq6X/rWDX2SDzQcfMR0X6nelSAAAAAqCTGYZWTLx0JnX7IosA6kC5zqRkhvds59yjQJuKrQvEAAAAAfmTSo4vlCMnkNClIPp4DdUyCqgr6Jn+AHpPJLIzkJOSdAm6AjEiw3kWQoPL2HDAK3qetQ+YWT6G1GmdR6yqLC</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -827,11 +827,11 @@
         <NodeLayout
           Size="176,42"
           Id="Package\Tarea Flujo de datos"
-          TopLeft="173,142" />
+          TopLeft="51,146" />
         <NodeLayout
           Size="175,42"
           Id="Package\Base de datos Mysql"
-          TopLeft="301,302" />
+          TopLeft="109,303" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
