@@ -1,37 +1,37 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/2/2026 5:11:46 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-LO8Q0MV"
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
-  DTS:DTSID="{9B625080-7678-455C-B2B3-7E13DD46D1C7}"
+  DTS:DTSID="{8620133D-4D29-481E-8ADF-006D329069E4}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1033"
   DTS:ObjectName="csv_stg"
   DTS:PackageType="5"
   DTS:VersionBuild="16"
-  DTS:VersionGUID="{70C7EB88-F1F8-4ABC-9401-C6255AEFC790}">
+  DTS:VersionGUID="{D38F3BD3-F0A4-4182-B46D-AA545CE35745}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[BD2TP]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{0D07C027-141F-49DE-8E40-C020A7E9F323}"
+      DTS:DTSID="{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}"
       DTS:ObjectName="BD2TP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{0D07C027-141F-49DE-8E40-C020A7E9F323}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[employee_csv_source]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{653B554A-DD16-45E3-890D-169574D66FE1}"
+      DTS:DTSID="{251DB980-06B1-4EF8-BA27-C203FBEDDFFD}"
       DTS:ObjectName="employee_csv_source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -51,7 +51,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EMPLOYEE_ID"
-              DTS:DTSID="{C398C2BC-AB93-49D2-8170-05C80EA8161D}"
+              DTS:DTSID="{E55D2171-CF37-4076-8C92-3C19703C6BF6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -60,7 +60,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FULL_NAME"
-              DTS:DTSID="{7FA61C55-D89C-4DAD-8CB8-D7FF68F4B806}"
+              DTS:DTSID="{71791D06-C9B9-4A2E-B138-2DF9354E9433}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -69,7 +69,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CATEGORY"
-              DTS:DTSID="{E1C428B0-2FFB-4B4E-B484-528F2E329D7C}"
+              DTS:DTSID="{F8EECABA-FEEB-4AFC-99E3-BEF2E5C5A018}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -78,7 +78,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EMPLOYMENT_DATE"
-              DTS:DTSID="{37E6345D-4A60-4C92-885E-A78E771ACA0F}"
+              DTS:DTSID="{D0D527B1-EB48-4268-A636-3F21B9966285}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -87,7 +87,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="BIRTH_DATE"
-              DTS:DTSID="{1388BD98-01C9-43DB-95A3-45FA7918549E}"
+              DTS:DTSID="{D98D8AC5-FCED-4CF6-B539-C05420A40B40}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -96,7 +96,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EDUCATION_LEVEL"
-              DTS:DTSID="{0B941559-A434-43CC-A465-E4BACFC8BEFF}"
+              DTS:DTSID="{12D0AF40-59F2-4ECA-86A7-6AA32F8E8F09}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -105,7 +105,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="GENDER"
-              DTS:DTSID="{F121510D-1FD1-4213-99D5-FD5D73E4C161}"
+              DTS:DTSID="{D887A099-CE62-48AB-9CE1-1CD9C2F9D737}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -114,7 +114,7 @@
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[holidays_csv_source]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{37824EC8-B206-4FF9-988E-3E6D756169B0}"
+      DTS:DTSID="{F8FFDB3A-AFC0-436E-9A3A-4E3E49AE58E6}"
       DTS:ObjectName="holidays_csv_source">
       <DTS:ObjectData>
         <DTS:ConnectionManager
@@ -134,7 +134,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DATE"
-              DTS:DTSID="{574B351A-0755-4AE6-908D-0B99F1CB52A5}"
+              DTS:DTSID="{6DF63D19-FD53-4116-A3AD-BA3825E39D96}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -143,7 +143,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="HOLIDAY"
-              DTS:DTSID="{C70DA442-5763-42EC-AC96-9F735795350F}"
+              DTS:DTSID="{D9098348-C8E5-448C-99C8-6788A4CD447B}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -156,7 +156,7 @@
       DTS:refId="Package\Data Flow Task"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{B3125D11-01E3-4E17-9015-BB082C9BD4DD}"
+      DTS:DTSID="{F6DFC02C-CAB0-4C4A-9208-5CBA5BEC28BD}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Data Flow Task"
@@ -900,7 +900,7 @@
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{78B1B261-0BB6-4C2F-B09B-46522F0C524B}"
+      DTS:DTSID="{7D9480B7-99F9-4CDF-95B9-42AB5F977052}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Execute SQL Task"
@@ -909,7 +909,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{0D07C027-141F-49DE-8E40-C020A7E9F323}"
+          SQLTask:Connection="{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE employee_stg;&#xA;TRUNCATE TABLE holidays_stg;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -918,7 +918,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{3B07BC62-D38A-4C80-9132-BA345AE963A3}"
+      DTS:DTSID="{3BD05767-78B7-4B3D-90C9-6F9BE70BEB2A}"
       DTS:From="Package\Execute SQL Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"

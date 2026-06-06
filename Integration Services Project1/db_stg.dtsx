@@ -1,43 +1,43 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/2/2026 7:59:38 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-LO8Q0MV"
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
-  DTS:DTSID="{5B37F50D-27F5-4F7D-841D-17F7D2834576}"
+  DTS:DTSID="{C430317E-E033-4257-85CD-CBE6AE1D384B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
   DTS:VersionBuild="4"
-  DTS:VersionGUID="{F2C00506-70A1-401A-A950-C69B0FB9D7EA}">
+  DTS:VersionGUID="{A91D7CA7-7863-4ACE-8935-AE1686FCE834}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[BD2TP]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{2EF644AF-1312-42C9-A5BE-0BDFBC1CA244}"
+      DTS:DTSID="{307EDDFA-1B67-49D3-865A-E503C8652FDB}"
       DTS:ObjectName="BD2TP">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{2EF644AF-1312-42C9-A5BE-0BDFBC1CA244}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{307EDDFA-1B67-49D3-865A-E503C8652FDB}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[TDChistorySales]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{3151BF97-3C09-4526-BF91-B12790306FC5}"
+      DTS:DTSID="{80022916-4C43-4540-A6E6-5A9DA95A2304}"
       DTS:ObjectName="TDChistorySales">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=TDChistorySales;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{3151BF97-3C09-4526-BF91-B12790306FC5}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=TDChistorySales;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{80022916-4C43-4540-A6E6-5A9DA95A2304}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -47,7 +47,7 @@
       DTS:refId="Package\Carga de datos"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{9C60BEC8-9DB6-4EB2-ADA6-A400DED30CED}"
+      DTS:DTSID="{A8097FFF-53FA-46E5-A8AE-42AA409458CF}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Carga de datos"
@@ -497,7 +497,7 @@
       DTS:refId="Package\Truncacion de tablas"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{EF2A3A68-43B6-4CF0-BEB4-F44955C1661D}"
+      DTS:DTSID="{B74F87ED-A163-40D0-A79E-0B5F6251032D}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncacion de tablas"
@@ -506,7 +506,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{2EF644AF-1312-42C9-A5BE-0BDFBC1CA244}"
+          SQLTask:Connection="{307EDDFA-1B67-49D3-865A-E503C8652FDB}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.TDCsales_stg;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -515,7 +515,7 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{FE149F99-1BBD-4A01-995A-98D4D9195B25}"
+      DTS:DTSID="{4AD07F0E-CFB1-47C1-9D2B-D250B6836B18}"
       DTS:From="Package\Truncacion de tablas"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
