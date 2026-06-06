@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-4U0U97Q</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAiNpwpcVVECHlxE/G1ZhdAAAAAACAAAAAAAQZgAAAAEAACAAAABzRuEKiCfaqsT55NuttwmJO6YEPGFcW3Rsvs9r8RsXNwAAAAAOgAAAAAIAACAAAAByP6u/CYLQ8PTFdjSizNo6F1lCZiM2cFTZejoUTjO5NJAAAAC6/ErOXSw4akdw6K8vPH3XkR5tMjrb5Ogw2lpamkT3FOW+piyPNtOSvYJuBPKTLCFxIF9LCnAs1pfDrgptv5p8fM0sbepT87ZTKKn9hNJ1onczOg4umZk+6mGUadLmIWyAMeEcDrtNeNKsEIRXTjzKJh1P/ZKkNaKytJlcfE/+cM+gBMPTsARdSTYZGcs0yGVAAAAAeB9owkU2gm0zO+7L2GjJHoR0xnQpfDfP8WzlJruQLWxszQErBJmVIf40PiYHjs/YjSn08NRMUWXbXEv4azX8RA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAiNpwpcVVECHlxE/G1ZhdAAAAAACAAAAAAAQZgAAAAEAACAAAAC1QgTDD+9/AYmk11TireyXOcnnwihD3biad9p0PMD0PAAAAAAOgAAAAAIAACAAAABXJaRUySVt3Lp+saZ4g7UEBVCQVrsoiRRdmMNF0i1KcpAAAACPKQbxFsNEGpSwJe4rDljzti6bKw5zlZ+K2AEAISF1OuTjH05+DYbjhoQ/NBDDnRqs9Xlj8dYzsiDXHb+nXlG0ZkFJiD9faL6Vw6wA26MjgNdOMLlfpRURI+19Uue85AcbqQCk9WTYZ+FOT8MtkYqiwaMtX9Lv2GG5tL++6pegXSGWgQI+uaLZvTiPURKpXQxAAAAAPsaUVAvsbseS/8TluiFTdf1lOkmzfQtzVWfrKO7EFGza4oiX3iowLJ0p3+hwYOEiq7UIrT/QLeqFlf6JwTqSLA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -2227,7 +2227,12 @@
     </Manifest>
   </DeploymentModelSpecificContent>
   <ControlFlowParts />
-  <Miscellaneous />
+  <Miscellaneous>
+    <ProjectItem>
+      <Name>DW_VENTAS.sql</Name>
+      <FullPath>DW_VENTAS.sql</FullPath>
+    </ProjectItem>
+  </Miscellaneous>
   <Configurations>
     <Configuration>
       <Name>Development</Name>

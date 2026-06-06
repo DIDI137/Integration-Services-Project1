@@ -3,9 +3,6 @@
     <BuildType Name="Development" />
     <Platform Name="Default" />
   </Configurations>
-  <Folder Name="/Elementos de la solución/">
-    <File Path="../../../Users/Usuario/Documents/DW_VENTAS.sql" />
-  </Folder>
   <Project Path="Integration Services Project1/Integration Services Project1.dtproj" Type="c9674dcb-5085-4a16-b785-4c70dd1589bd">
     <Platform Project="?" />
   </Project>
