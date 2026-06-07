@@ -11,8 +11,9 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{57645C78-EA17-49B3-9B34-D628E8529EDC}">
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{60BCE0A8-43EF-4925-93A0-FD31903336AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -47,12 +48,7 @@
       DTS:ObjectName="TPBBDD2.alumno">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="uid=alumno;Dsn=TPBBDD2;">
-          <DTS:Password
-            DTS:Name="pwd"
-            Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAAiNpwpcVVECHlxE/G1ZhdAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACrR6qJZiRQ1+VkbgdDCElTB/qf3YdG0Iry6w0H8FlBEgAAAAAOgAAAAAIAACAAAACgOpPd/45aCpVMdENpdEq6X/rWDX2SDzQcfMR0X6nelSAAAAAqCTGYZWTLx0JnX7IosA6kC5zqRkhvds59yjQJuKrQvEAAAAAfmTSo4vlCMnkNClIPp4DdUyCqgr6Jn+AHpPJLIzkJOSdAm6AjEiw3kWQoPL2HDAK3qetQ+YWT6G1GmdR6yqLC</DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="uid=alumno;Dsn=TPBBDD2;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -813,28 +809,48 @@
     </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="176,42"
-          Id="Package\Tarea Flujo de datos"
-          TopLeft="51,146" />
-        <NodeLayout
           Size="175,42"
           Id="Package\Base de datos Mysql"
           TopLeft="109,303" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Tarea Flujo de datos"
+          TopLeft="51,146" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Base de datos Mysql">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Base de datos Mysql\Origen ODBC"
+          TopLeft="317,331" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Base de datos Mysql\Origen ODBC">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Tarea Flujo de datos">
     <LayoutInfo>
@@ -878,26 +894,6 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Base de datos Mysql">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
-        <NodeLayout
-          Size="141,42"
-          Id="Package\Base de datos Mysql\Origen ODBC"
-          TopLeft="317,331" />
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Base de datos Mysql\Origen ODBC">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
