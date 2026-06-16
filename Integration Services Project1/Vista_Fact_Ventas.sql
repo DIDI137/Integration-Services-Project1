@@ -24,6 +24,7 @@ SELECT
     vnt.ID_Cliente_FK,
     vnt.ID_Empleado_FK,
     vnt.ID_Producto_FK,
+    CAST(NULL AS INT) AS ID_Age_Group_FK,
 
     vnt.Cantidad_Unidades,
     CAST(ISNULL(pr.PRICE, 0.00) AS DECIMAL(18,2)) AS Precio_Unitario,
