@@ -7,13 +7,12 @@
   DTS:CreatorName="DESKTOP-4U0U97Q\Usuario"
   DTS:DTSID="{3624E7C8-574F-4E3A-A0F6-3A9459703314}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:ProtectionLevel="0"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{B8ED0488-745F-450F-B53C-8C57E7CCDB93}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{B49A8B1B-7165-4716-A0E2-149C6798272B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -36,11 +35,7 @@
       DTS:ObjectName="TPBBDD2.alumno">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="uid=alumno;Dsn=TPBBDD2;">
-          <DTS:Password
-            DTS:Name="pwd"
-            Sensitive="1"></DTS:Password>
-        </DTS:ConnectionManager>
+          DTS:ConnectionString="uid=alumno;Dsn=TPBBDD2;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>

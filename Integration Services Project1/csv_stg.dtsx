@@ -11,9 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="csv_stg"
   DTS:PackageType="5"
-  DTS:ProtectionLevel="0"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{9F7DCA42-C207-4F4C-A30B-7F62639008EB}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{E2ABF32C-B332-4DB4-B3B2-D9203A27E584}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

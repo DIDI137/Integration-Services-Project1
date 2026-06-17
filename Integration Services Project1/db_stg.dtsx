@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{72EE8A8D-B845-4D88-9A63-A5627E48726A}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{9F04887D-997E-4221-98F4-E400D75D423F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -37,11 +37,11 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Initial Catalog=TDChistorySales3;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{80022916-4C43-4540-A6E6-5A9DA95A2304}TDChistorySales;">
+          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Initial Catalog=TDChistorySales3;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-Package1-{80022916-4C43-4540-A6E6-5A9DA95A2304}TDChistorySales;">
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/Y29K/QsiUCXtfeK/XbUjAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA+VmRlgPdTFBK5EHG0tsZnWY7DF3FUQBh00qHi9KzzeAAAAAAOgAAAAAIAACAAAAA/RpBwBUmBZa8l2B9zikQUxmxx+P09tartBQM746HEGiAAAAADe7vpOsIPUoIEXcXBml9BJnMtobh60BbV1XDM0GMnT0AAAAD1YPb1tmTFzsQ7ttNbfk/BppPdfL1FnF3vSbTRk23r8pdUTk6blQ3PqNV1aNL6BvKPVd3uxlu0d1InjE2WV+en</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/Y29K/QsiUCXtfeK/XbUjAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACs5GS0a1vzXNZUcd+YR3mar4reGT9jKTtm9EbPxjneGAAAAAAOgAAAAAIAACAAAABbvmTtbuWcYjUKUgGzh1ruzyw8iF5E6k1wu98USd3MPyAAAADc6+u3wiGRL6zWg1+w+SLpKbj7BEbwCRpJzPaMLbcHm0AAAAAI8LWergrGjejN/R/s8XsrNKKBr7nl+qBrJ8Jkfc9jrNnroJuqqr/73eeoV22sX7mKxvFG0OzMBtYP3O4OLvXv</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
