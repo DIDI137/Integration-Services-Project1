@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="6/2/2026 7:59:38 PM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
   DTS:DTSID="{C430317E-E033-4257-85CD-CBE6AE1D384B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{A91D7CA7-7863-4ACE-8935-AE1686FCE834}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{72EE8A8D-B845-4D88-9A63-A5627E48726A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{307EDDFA-1B67-49D3-865A-E503C8652FDB}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=SANTIPC;User ID=;Initial Catalog=;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{307EDDFA-1B67-49D3-865A-E503C8652FDB}BD2TP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,12 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=TDChistorySales;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package1-{80022916-4C43-4540-A6E6-5A9DA95A2304}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;" />
+          DTS:ConnectionString="Data Source=server-tuia.database.windows.net;User ID=alumno;Initial Catalog=TDChistorySales3;Provider=SQLOLEDB.1;Application Name=SSIS-Package1-{80022916-4C43-4540-A6E6-5A9DA95A2304}TDChistorySales;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/Y29K/QsiUCXtfeK/XbUjAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA+VmRlgPdTFBK5EHG0tsZnWY7DF3FUQBh00qHi9KzzeAAAAAAOgAAAAAIAACAAAAA/RpBwBUmBZa8l2B9zikQUxmxx+P09tartBQM746HEGiAAAAADe7vpOsIPUoIEXcXBml9BJnMtobh60BbV1XDM0GMnT0AAAAD1YPb1tmTFzsQ7ttNbfk/BppPdfL1FnF3vSbTRk23r8pdUTk6blQ3PqNV1aNL6BvKPVd3uxlu0d1InjE2WV+en</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -311,7 +316,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[TDCsales_stg]</property>
+                  name="OpenRowset">[TDCsales_stg]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -572,13 +577,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="203,42"
-          Id="Package\Carga de datos\TDCHistorySales_source"
-          TopLeft="252,120" />
-        <NodeLayout
           Size="148,42"
           Id="Package\Carga de datos\TDCsales_stg"
           TopLeft="273,339" />
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Carga de datos\TDCHistorySales_source"
+          TopLeft="252,120" />
         <EdgeLayout
           Id="Package\Carga de datos.Paths[OLE DB Source Output]"
           TopLeft="350.25,162">

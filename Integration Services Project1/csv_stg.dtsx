@@ -7,13 +7,13 @@
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
   DTS:DTSID="{8620133D-4D29-481E-8ADF-006D329069E4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="csv_stg"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{32E65A81-C45F-474A-9EEC-7ECCAED6818F}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{9F7DCA42-C207-4F4C-A30B-7F62639008EB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -26,7 +26,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=SANTIPC;User ID=;Initial Catalog=;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-csv_stg-{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}BD2TP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -43,7 +43,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="A:\Integration-Services-Project1\Area Recursos Humanos\Employee.csv">
+          DTS:ConnectionString="C:\TEMP\TPBBDD2\Area Recursos Humanos\Employee.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -52,7 +52,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EMPLOYEE_ID"
-              DTS:DTSID="{E55D2171-CF37-4076-8C92-3C19703C6BF6}"
+              DTS:DTSID="{07B52EE9-7DBE-468C-A3F4-B03FC33AC167}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -61,7 +61,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="FULL_NAME"
-              DTS:DTSID="{71791D06-C9B9-4A2E-B138-2DF9354E9433}"
+              DTS:DTSID="{31487C3F-DA73-4375-9A36-02DF202ED177}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -70,7 +70,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CATEGORY"
-              DTS:DTSID="{F8EECABA-FEEB-4AFC-99E3-BEF2E5C5A018}"
+              DTS:DTSID="{3386C9E8-4987-46EB-BE6C-81880381AE78}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -79,7 +79,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EMPLOYMENT_DATE"
-              DTS:DTSID="{D0D527B1-EB48-4268-A636-3F21B9966285}"
+              DTS:DTSID="{2F00866E-8EB2-4C31-9A58-DCD03283A6F8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -88,7 +88,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="BIRTH_DATE"
-              DTS:DTSID="{D98D8AC5-FCED-4CF6-B539-C05420A40B40}"
+              DTS:DTSID="{CDB79AEB-A938-4C6C-B6CB-3B97890272DA}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -97,7 +97,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="EDUCATION_LEVEL"
-              DTS:DTSID="{12D0AF40-59F2-4ECA-86A7-6AA32F8E8F09}"
+              DTS:DTSID="{1BC1251E-3CC8-4D89-B17C-CC37273C03E6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -106,7 +106,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="GENDER"
-              DTS:DTSID="{D887A099-CE62-48AB-9CE1-1CD9C2F9D737}"
+              DTS:DTSID="{A48CFCED-5146-4527-9005-195D4DB3BE47}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -126,7 +126,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="A:\Integration-Services-Project1\Area Recursos Humanos\US Holiday Dates (2004-2021).csv">
+          DTS:ConnectionString="C:\TEMP\TPBBDD2\Area Recursos Humanos\US Holiday Dates (2004-2021).csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -135,7 +135,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Date"
-              DTS:DTSID="{92CC3347-06B2-419C-B04F-874C81DE009C}"
+              DTS:DTSID="{B462E64D-104C-4551-952A-83D5CBD29A8E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -144,7 +144,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Holiday"
-              DTS:DTSID="{72E63B6F-94B6-4C5F-AACF-786E7EBC978E}"
+              DTS:DTSID="{E73ADAA4-B649-444B-898B-09ED98B0282F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -153,7 +153,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="WeekDay"
-              DTS:DTSID="{F725B6D1-9391-4DB4-B921-A9E4A4AE75AE}"
+              DTS:DTSID="{DDB967E2-0CE4-499B-ABD1-E653978D81AB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -162,7 +162,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Month"
-              DTS:DTSID="{1F917FF6-1A9D-40FB-96DA-64D4D2840A50}"
+              DTS:DTSID="{EE397FA8-6081-49B9-A8A1-E50A70DEB2AC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -171,7 +171,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Day"
-              DTS:DTSID="{FAC60ECE-EACD-4F3F-ADCC-2FD7F6CC21B8}"
+              DTS:DTSID="{BC465BCC-410A-4153-A415-E5368A7F70EF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -180,7 +180,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="Year"
-              DTS:DTSID="{7BF6C04A-3335-4B73-88E2-32B465EC21C9}"
+              DTS:DTSID="{7E7AB301-6803-4310-8619-1C1A10BE478A}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -200,7 +200,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="A:\Integration-Services-Project1\Area Recursos Humanos\Holidays.csv">
+          DTS:ConnectionString="C:\TEMP\TPBBDD2\Area Recursos Humanos\Holidays.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -209,7 +209,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="DATE"
-              DTS:DTSID="{6DF63D19-FD53-4116-A3AD-BA3825E39D96}"
+              DTS:DTSID="{73E8E399-3B3A-4DB9-8A1C-9296AFFA5C7E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -218,7 +218,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="HOLIDAY"
-              DTS:DTSID="{D9098348-C8E5-448C-99C8-6788A4CD447B}"
+              DTS:DTSID="{F16EC809-BD21-4B90-BF8D-C54ED5AEC594}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -643,13 +643,13 @@
                       refId="Package\Data Flow Task\employee_stg.Inputs[OLE DB Destination Input].ExternalColumns[FULL_NAME]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="50"
                       name="FULL_NAME" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\employee_stg.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORY]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="50"
                       name="CATEGORY" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\employee_stg.Inputs[OLE DB Destination Input].ExternalColumns[EMPLOYMENT_DATE]"
@@ -667,7 +667,7 @@
                       refId="Package\Data Flow Task\employee_stg.Inputs[OLE DB Destination Input].ExternalColumns[EDUCATION_LEVEL]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="50"
                       name="EDUCATION_LEVEL" />
                     <externalMetadataColumn
                       refId="Package\Data Flow Task\employee_stg.Inputs[OLE DB Destination Input].ExternalColumns[GENDER]"
@@ -1487,21 +1487,51 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="147,42"
-          Id="Package\Data Flow Task\employee_stg"
-          TopLeft="191,250" />
-        <NodeLayout
-          Size="140,42"
-          Id="Package\Data Flow Task\holidays_stg"
-          TopLeft="450,250" />
+          Size="193,42"
+          Id="Package\Data Flow Task\holidays_csv_2_source"
+          TopLeft="668,104" />
         <NodeLayout
           Size="188,42"
           Id="Package\Data Flow Task\employee_csv_source"
           TopLeft="172,106" />
         <NodeLayout
+          Size="140,42"
+          Id="Package\Data Flow Task\holidays_stg"
+          TopLeft="450,250" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Data Flow Task\employee_stg"
+          TopLeft="191,250" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Data Flow Task\holidays_2_stg"
+          TopLeft="684,249" />
+        <NodeLayout
           Size="181,42"
           Id="Package\Data Flow Task\holidays_csv_source"
           TopLeft="427,106" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Flat File Source Output2]"
+          TopLeft="762.25,146">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,103"
+              Start="0,0"
+              End="0,95.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Flat File Source Output1]"
           TopLeft="518.75,148">
@@ -1546,41 +1576,11 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Data Flow Task\holidays_csv_2_source"
-          TopLeft="668,104" />
-        <NodeLayout
-          Size="152,42"
-          Id="Package\Data Flow Task\holidays_2_stg"
-          TopLeft="684,249" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Flat File Source Output2]"
-          TopLeft="762.25,146">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,103"
-              Start="0,0"
-              End="0,95.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,95.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\employee_stg">
+    design-time-name="Package\Data Flow Task\holidays_stg">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1593,7 +1593,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\holidays_stg">
+    design-time-name="Package\Data Flow Task\employee_stg">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
