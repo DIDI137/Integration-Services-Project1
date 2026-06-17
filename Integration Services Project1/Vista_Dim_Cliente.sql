@@ -8,7 +8,7 @@ WITH Clientes_Union AS (
 		STATE,
 		ZIPCODE,
 		'Retail' AS Customer_Type
-	FROM Customer_R
+	FROM customer_r_stg
 
 	UNION ALL
 
@@ -20,7 +20,7 @@ WITH Clientes_Union AS (
 		STATE,
 		ZIPCODE,
 		'Wholesale' AS Customer_Type
-	FROM Customer_W
+	FROM customer_w_stg
 )
 
 SELECT
