@@ -11,8 +11,8 @@
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{B49A8B1B-7165-4716-A0E2-149C6798272B}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{C3EC07B6-FFE7-4232-A3A3-AFD9C20D6668}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{3D063E30-6A66-4AA2-AE2C-E2DDBCE1B8A4}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=SANTIPC;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{3D063E30-6A66-4AA2-AE2C-E2DDBCE1B8A4}BD2TP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -35,7 +35,7 @@
       DTS:ObjectName="TPBBDD2.alumno">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="uid=alumno;Dsn=TPBBDD2;" />
+          DTS:ConnectionString="uid=alumno;Dsn=mysql;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -1455,51 +1455,37 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="146,42"
-          Id="Package\Base de datos Mysql\billing_source"
-          TopLeft="173,84" />
-        <NodeLayout
-          Size="184,42"
-          Id="Package\Base de datos Mysql\billing_details_source"
-          TopLeft="355,83" />
-        <NodeLayout
           Size="165,42"
           Id="Package\Base de datos Mysql\discounts_source"
           TopLeft="583,85" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Base de datos Mysql\billing_details_stg"
+          TopLeft="362,291" />
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Base de datos Mysql\discounts_stg"
+          TopLeft="595,295" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\Base de datos Mysql\prices_stg"
+          TopLeft="784,296" />
         <NodeLayout
           Size="147,42"
           Id="Package\Base de datos Mysql\prices_source"
           TopLeft="777,84" />
         <NodeLayout
+          Size="184,42"
+          Id="Package\Base de datos Mysql\billing_details_source"
+          TopLeft="355,83" />
+        <NodeLayout
           Size="128,42"
           Id="Package\Base de datos Mysql\billing_stg"
           TopLeft="184,290" />
-        <EdgeLayout
-          Id="Package\Base de datos Mysql.Paths[Salida de origen de ODBC]"
-          TopLeft="247,126">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,164"
-              Start="0,0"
-              End="0,156.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,156.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
-          Size="166,42"
-          Id="Package\Base de datos Mysql\billing_details_stg"
-          TopLeft="362,291" />
+          Size="146,42"
+          Id="Package\Base de datos Mysql\billing_source"
+          TopLeft="173,84" />
         <EdgeLayout
           Id="Package\Base de datos Mysql.Paths[ODBC Source Output]"
           TopLeft="446,125">
@@ -1522,24 +1508,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="146,42"
-          Id="Package\Base de datos Mysql\discounts_stg"
-          TopLeft="595,295" />
         <EdgeLayout
-          Id="Package\Base de datos Mysql.Paths[ODBC Source Output1]"
-          TopLeft="666.75,127">
+          Id="Package\Base de datos Mysql.Paths[Salida de origen de ODBC]"
+          TopLeft="247,126">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,168"
+              EndConnector="0,164"
               Start="0,0"
-              End="0,160.5">
+              End="0,156.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,160.5" />
+                    End="0,156.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1548,10 +1530,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="129,42"
-          Id="Package\Base de datos Mysql\prices_stg"
-          TopLeft="784,296" />
         <EdgeLayout
           Id="Package\Base de datos Mysql.Paths[ODBC Source Output2]"
           TopLeft="849.5,126">
@@ -1566,6 +1544,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,162.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Base de datos Mysql.Paths[ODBC Source Output1]"
+          TopLeft="666.75,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,168"
+              Start="0,0"
+              End="0,160.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,160.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
