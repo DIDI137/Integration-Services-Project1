@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
   DTS:DTSID="{70BFDBB0-2A2F-4E45-B454-5091C5264974}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{A91C7DF7-CDB2-49B0-A6FA-99B6FB74FE19}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{C826313E-DB7D-415F-91BE-65D5D0A033CF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,19 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{02E53A7A-81D8-481B-A1EC-3F56CDF49A16}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=SANTIPC;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{02E53A7A-81D8-481B-A1EC-3F56CDF49A16}BD2TP;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SANTIPC.TDC_Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{120DAF4A-0638-450D-812C-FA5248A4B412}"
+      DTS:ObjectName="SANTIPC.TDC_Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=SANTIPC;Initial Catalog=TDC_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{120DAF4A-0638-450D-812C-FA5248A4B412}SANTIPC.TDC_Staging;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -61,7 +73,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Customer_R]</property>
+                  name="OpenRowset">[customer_r_stg]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -162,8 +174,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Carga de datos\customer_r_stg.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i4"
                       name="CUSTOMER_ID" />
                     <externalMetadataColumn
                       refId="Package\Carga de datos\customer_r_stg.Inputs[OLE DB Destination Input].ExternalColumns[FULL_NAME]"
@@ -187,8 +198,7 @@
                       name="STATE" />
                     <externalMetadataColumn
                       refId="Package\Carga de datos\customer_r_stg.Inputs[OLE DB Destination Input].ExternalColumns[ZIPCODE]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i8"
                       name="ZIPCODE" />
                   </externalMetadataColumns>
                 </input>
@@ -234,7 +244,7 @@
                   dataType="System.String"
                   description="The XML data used by the XML source adapter."
                   expressionType="Notify"
-                  name="XMLData">A:\Integration-Services-Project1\Area Comercializacion\Customer_R.xml</property>
+                  name="XMLData">C:\TEMP\TPBBDD2\Area Comercializacion\Customer_R.xml</property>
                 <property
                   dataType="System.String"
                   description="The variable used by the XML source adapter to specify XML data."
@@ -247,7 +257,7 @@
                   dataType="System.String"
                   description="The XML schema definition used by the XML source adapter."
                   expressionType="Notify"
-                  name="XMLSchemaDefinition">A:\Integration-Services-Project1\Area Comercializacion\Customer_R.xsd</property>
+                  name="XMLSchemaDefinition">C:\TEMP\TPBBDD2\Area Comercializacion\Customer_R.xsd</property>
                 <property
                   dataType="System.Boolean"
                   description="Identifies whether or not to use inline schema."
@@ -502,7 +512,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Customer_W]</property>
+                  name="OpenRowset">[customer_w_stg]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -603,8 +613,7 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Carga de datos\customer_w_stg.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_ID]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i4"
                       name="CUSTOMER_ID" />
                     <externalMetadataColumn
                       refId="Package\Carga de datos\customer_w_stg.Inputs[OLE DB Destination Input].ExternalColumns[FULL_NAME]"
@@ -628,8 +637,7 @@
                       name="STATE" />
                     <externalMetadataColumn
                       refId="Package\Carga de datos\customer_w_stg.Inputs[OLE DB Destination Input].ExternalColumns[ZIPCODE]"
-                      dataType="wstr"
-                      length="255"
+                      dataType="i8"
                       name="ZIPCODE" />
                   </externalMetadataColumns>
                 </input>
@@ -675,7 +683,7 @@
                   dataType="System.String"
                   description="The XML data used by the XML source adapter."
                   expressionType="Notify"
-                  name="XMLData">A:\Integration-Services-Project1\Area Comercializacion\Customer_W.xml</property>
+                  name="XMLData">C:\TEMP\TPBBDD2\Area Comercializacion\Customer_W.xml</property>
                 <property
                   dataType="System.String"
                   description="The variable used by the XML source adapter to specify XML data."
@@ -688,7 +696,7 @@
                   dataType="System.String"
                   description="The XML schema definition used by the XML source adapter."
                   expressionType="Notify"
-                  name="XMLSchemaDefinition">A:\Integration-Services-Project1\Area Comercializacion\Customer_W.xsd</property>
+                  name="XMLSchemaDefinition">C:\TEMP\TPBBDD2\Area Comercializacion\Customer_W.xsd</property>
                 <property
                   dataType="System.Boolean"
                   description="Identifies whether or not to use inline schema."
@@ -956,7 +964,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{02E53A7A-81D8-481B-A1EC-3F56CDF49A16}"
+          SQLTask:Connection="{120DAF4A-0638-450D-812C-FA5248A4B412}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Customer_W;&#xA;TRUNCATE TABLE dbo.Customer_R;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -1034,43 +1042,21 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="208,42"
-          Id="Package\Carga de datos\Customer_R_XML_source"
-          TopLeft="201,140" />
-        <NodeLayout
           Size="211,42"
           Id="Package\Carga de datos\Customer_W_XML_source"
           TopLeft="504,138" />
         <NodeLayout
-          Size="155,42"
-          Id="Package\Carga de datos\customer_r_stg"
-          TopLeft="228,323" />
-        <EdgeLayout
-          Id="Package\Carga de datos.Paths[cliente]"
-          TopLeft="305.25,182">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,141"
-              Start="0,0"
-              End="0,133.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,133.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="159,42"
           Id="Package\Carga de datos\customer_w_stg"
           TopLeft="530,330" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Carga de datos\Customer_R_XML_source"
+          TopLeft="201,140" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Carga de datos\customer_r_stg"
+          TopLeft="228,323" />
         <EdgeLayout
           Id="Package\Carga de datos.Paths[cliente1]"
           TopLeft="609.5,180">
@@ -1093,11 +1079,33 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de datos.Paths[cliente]"
+          TopLeft="305.25,182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,141"
+              Start="0,0"
+              End="0,133.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,133.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de datos\customer_r_stg">
+    design-time-name="Package\Carga de datos\customer_w_stg">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1110,7 +1118,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de datos\customer_w_stg">
+    design-time-name="Package\Carga de datos\customer_r_stg">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

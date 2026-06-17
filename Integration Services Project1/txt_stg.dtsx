@@ -7,12 +7,12 @@
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
   DTS:DTSID="{E93D7CC9-E05C-4612-A9C4-301ECE27805A}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1010.2"
+  DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="txt_stg"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{F0DE9902-B824-4823-B48E-29E3D5C5AD68}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{76970502-BE87-4909-AFC1-FE88D4079164}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=BD2TP;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-txt_stg-{AE82E7D7-42E2-4DDB-8890-86723B254AE5}DESKTOP-LO8Q0MV\SQLEXPRESS.BD2TP;" />
+          DTS:ConnectionString="Data Source=SANTIPC;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-txt_stg-{AE82E7D7-42E2-4DDB-8890-86723B254AE5}BD2TP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="A:\Integration-Services-Project1\Area Produccion\Products.txt">
+          DTS:ConnectionString="C:\TEMP\TPBBDD2\Area Produccion\Products.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -50,7 +50,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="producto_id"
-              DTS:DTSID="{EE5F8920-7E38-4103-9B6F-FAFB127CD18B}"
+              DTS:DTSID="{B8D3556B-9556-4B87-A6C2-2404749594C1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -59,7 +59,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="detalle"
-              DTS:DTSID="{610E001D-DCB9-4419-9D95-406D40B882A5}"
+              DTS:DTSID="{857249A9-0E79-4872-BCBA-C58838E6C206}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -68,7 +68,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="volumen"
-              DTS:DTSID="{E300D6AC-4B1C-4EAC-B4CA-0A3F3F28C731}"
+              DTS:DTSID="{B8FC6079-ECE0-466C-9560-C0C97D402A95}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -87,7 +87,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="A:\Integration-Services-Project1\Area comercializacion\Regions.txt">
+          DTS:ConnectionString="C:\TEMP\TPBBDD2\Area Comercializacion\Regions.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -96,7 +96,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="region"
-              DTS:DTSID="{ECFCAE0A-AF52-48C0-968D-6B56021E66E0}"
+              DTS:DTSID="{EEA1143B-160F-4E65-B383-616F2E3376AC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -105,7 +105,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="estado"
-              DTS:DTSID="{DF08DB03-FC06-4BBE-B527-546D3489F1AF}"
+              DTS:DTSID="{0F8CE600-C62A-4841-872B-9ECC88783716}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -114,7 +114,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ciudad"
-              DTS:DTSID="{18C05027-9007-4D39-AEE4-DEB3C9B42269}"
+              DTS:DTSID="{D3F65D1F-9449-4110-8A9F-4123640D2B63}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -123,7 +123,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="codigo_postal"
-              DTS:DTSID="{BF5BE86D-A5F1-4F2D-B5EB-52BA67AD1298}"
+              DTS:DTSID="{3DF43C8E-52AA-42FE-8970-5324755031E9}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -142,7 +142,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="A:\Integration-Services-Project1\Area Produccion\Stock.txt">
+          DTS:ConnectionString="C:\TEMP\TPBBDD2\Area Produccion\Stock.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -151,7 +151,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="producto_id"
-              DTS:DTSID="{28C15E75-C7F5-48EE-8A51-793E23DE7577}"
+              DTS:DTSID="{C710D35F-E2C6-4830-887F-57DD7856EA5D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -160,7 +160,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="fecha"
-              DTS:DTSID="{82B871E0-012C-4BDB-8712-8FE739A053E4}"
+              DTS:DTSID="{7EB35255-4A65-454C-AFDB-E9E64A24CF0F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -169,7 +169,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="variacion"
-              DTS:DTSID="{AA286F3E-2404-4A84-8AE3-4F2B2F5B58AC}"
+              DTS:DTSID="{663AF8D5-1492-4FF1-A5D3-B01935119DF8}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -1228,73 +1228,29 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="142,42"
-          Id="Package\Carga de datos\products_stg"
-          TopLeft="209,290" />
-        <NodeLayout
-          Size="178,42"
-          Id="Package\Carga de datos\products_txt_source"
-          TopLeft="188,113" />
-        <EdgeLayout
-          Id="Package\Carga de datos.Paths[Flat File Source Output]"
-          TopLeft="278.5,155">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,135"
-              Start="0,0"
-              End="0,127.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,127.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Carga de datos\stock_txt_source"
-          TopLeft="379,113" />
+          Size="136,42"
+          Id="Package\Carga de datos\regions_stg"
+          TopLeft="597,294" />
         <NodeLayout
           Size="125,42"
           Id="Package\Carga de datos\stock_stg"
           TopLeft="399,292" />
-        <EdgeLayout
-          Id="Package\Carga de datos.Paths[Flat File Source Output1]"
-          TopLeft="460.5,155">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,137"
-              Start="0,0"
-              End="0,129.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,129.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Carga de datos\products_txt_source"
+          TopLeft="188,113" />
         <NodeLayout
           Size="172,42"
           Id="Package\Carga de datos\regions_txt_source"
           TopLeft="575,115" />
         <NodeLayout
-          Size="136,42"
-          Id="Package\Carga de datos\regions_stg"
-          TopLeft="597,294" />
+          Size="142,42"
+          Id="Package\Carga de datos\products_stg"
+          TopLeft="209,290" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Carga de datos\stock_txt_source"
+          TopLeft="379,113" />
         <EdgeLayout
           Id="Package\Carga de datos.Paths[Flat File Source Output2]"
           TopLeft="663,157">
@@ -1317,11 +1273,55 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de datos.Paths[Flat File Source Output1]"
+          TopLeft="460.5,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,137"
+              Start="0,0"
+              End="0,129.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,129.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga de datos.Paths[Flat File Source Output]"
+          TopLeft="278.5,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,135"
+              Start="0,0"
+              End="0,127.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,127.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de datos\products_stg">
+    design-time-name="Package\Carga de datos\regions_stg">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1347,7 +1347,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Carga de datos\regions_stg">
+    design-time-name="Package\Carga de datos\products_stg">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
