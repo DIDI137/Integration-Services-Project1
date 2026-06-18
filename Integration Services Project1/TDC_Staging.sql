@@ -1,6 +1,8 @@
 USE [master];
 
+GO
 CREATE DATABASE [TDC_Staging];
+GO
 
 USE [TDC_Staging];
 
