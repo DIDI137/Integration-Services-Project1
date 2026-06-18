@@ -7,27 +7,15 @@
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
   DTS:DTSID="{E93D7CC9-E05C-4612-A9C4-301ECE27805A}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1033"
   DTS:ObjectName="txt_stg"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{76970502-BE87-4909-AFC1-FE88D4079164}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{E528C0F1-CBA9-4D19-B151-A29522191639}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BD2TP]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{AE82E7D7-42E2-4DDB-8890-86723B254AE5}"
-      DTS:ObjectName="BD2TP">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=SANTIPC;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-txt_stg-{AE82E7D7-42E2-4DDB-8890-86723B254AE5}BD2TP;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[products_txt_source]"
       DTS:CreationName="FLATFILE"
@@ -130,6 +118,18 @@
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AE82E7D7-42E2-4DDB-8890-86723B254AE5}"
+      DTS:ObjectName="Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=TDC_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-txt_stg-{AE82E7D7-42E2-4DDB-8890-86723B254AE5}BD2TP;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[stock_txt_source]"
       DTS:CreationName="FLATFILE"
       DTS:DTSID="{5629343A-B6CE-487B-90E6-6EBE3AD7D23A}"
@@ -208,7 +208,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[products_stg]</property>
+                  name="OpenRowset">[products_stg]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -251,8 +251,8 @@
               <connections>
                 <connection
                   refId="Package\Carga de datos\products_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -502,7 +502,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[regions_stg]</property>
+                  name="OpenRowset">[regions_stg]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -545,8 +545,8 @@
               <connections>
                 <connection
                   refId="Package\Carga de datos\regions_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -881,8 +881,8 @@
               <connections>
                 <connection
                   refId="Package\Carga de datos\stock_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

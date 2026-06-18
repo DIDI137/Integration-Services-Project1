@@ -7,25 +7,25 @@
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
   DTS:DTSID="{C430317E-E033-4257-85CD-CBE6AE1D384B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{9F04887D-997E-4221-98F4-E400D75D423F}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{106421F6-6B56-41AB-82A6-02C4BA9B7960}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BD2TP]"
+      DTS:refId="Package.ConnectionManagers[Staging]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{307EDDFA-1B67-49D3-865A-E503C8652FDB}"
-      DTS:ObjectName="BD2TP">
+      DTS:ObjectName="Staging">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=SANTIPC;User ID=;Initial Catalog=;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-Package1-{307EDDFA-1B67-49D3-865A-E503C8652FDB}BD2TP;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=TDC_Staging;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Application Name=SSIS-Package1-{307EDDFA-1B67-49D3-865A-E503C8652FDB}BD2TP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -41,7 +41,7 @@
           <DTS:Password
             DTS:Name="Password"
             Sensitive="1"
-            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/Y29K/QsiUCXtfeK/XbUjAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACs5GS0a1vzXNZUcd+YR3mar4reGT9jKTtm9EbPxjneGAAAAAAOgAAAAAIAACAAAABbvmTtbuWcYjUKUgGzh1ruzyw8iF5E6k1wu98USd3MPyAAAADc6+u3wiGRL6zWg1+w+SLpKbj7BEbwCRpJzPaMLbcHm0AAAAAI8LWergrGjejN/R/s8XsrNKKBr7nl+qBrJ8Jkfc9jrNnroJuqqr/73eeoV22sX7mKxvFG0OzMBtYP3O4OLvXv</DTS:Password>
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAB34uGnz1n0+bEBls00PvHgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAABiJXHYAk74cfTmoM9Nb9wWpKI7NITQuZ6TBpuvgT1viQAAAAAOgAAAAAIAACAAAACH+Xd+jTj5IOv91SN5CLRu+R4XU5YVSCQBZbtpgEG6eCAAAADcVvcJuFRurmg58WAg8T9nYTs7ie3Cf4p7nHERCP/qhUAAAADFcdIbs+S8jTnf6tjDzGXJLsppIrSwPfagee9u/xUQYiC3NAgCNnqeLVqYuz4UFJS++/jfy+lA5BqsrvxzT3N1</DTS:Password>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -359,8 +359,8 @@
               <connections>
                 <connection
                   refId="Package\Carga de datos\TDCsales_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

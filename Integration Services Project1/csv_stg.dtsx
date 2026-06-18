@@ -7,27 +7,15 @@
   DTS:CreatorName="DESKTOP-LO8Q0MV\reneb"
   DTS:DTSID="{8620133D-4D29-481E-8ADF-006D329069E4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="1033"
   DTS:ObjectName="csv_stg"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{E2ABF32C-B332-4DB4-B3B2-D9203A27E584}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{8C0726FC-9B2E-424C-A3E9-6EBF81E7EF20}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BD2TP]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}"
-      DTS:ObjectName="BD2TP">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=SANTIPC;User ID=;Initial Catalog=;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Initial File Name=;Server SPN=;Authentication=;Access Token=;Application Name=SSIS-csv_stg-{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}BD2TP;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[employee_csv_source]"
       DTS:CreationName="FLATFILE"
@@ -221,6 +209,18 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Staging]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}"
+      DTS:ObjectName="Staging">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=TDC_Staging;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Application Name=SSIS-csv_stg-{8D99AF77-89F7-4E16-BFDD-69E71D0906CD}BD2TP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -560,8 +560,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\employee_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -761,8 +761,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\holidays_2_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1302,8 +1302,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\holidays_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

@@ -7,25 +7,25 @@
   DTS:CreatorName="DESKTOP-4U0U97Q\Usuario"
   DTS:DTSID="{3624E7C8-574F-4E3A-A0F6-3A9459703314}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="17.0.1016.0"
+  DTS:LastModifiedProductVersion="17.0.1010.2"
   DTS:LocaleID="11274"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{C3EC07B6-FFE7-4232-A3A3-AFD9C20D6668}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{32EAFE6D-2C7F-4EBD-ABBE-CE8E83362147}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[BD2TP]"
+      DTS:refId="Package.ConnectionManagers[Staging]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{3D063E30-6A66-4AA2-AE2C-E2DDBCE1B8A4}"
-      DTS:ObjectName="BD2TP">
+      DTS:ObjectName="Staging">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=SANTIPC;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{3D063E30-6A66-4AA2-AE2C-E2DDBCE1B8A4}BD2TP;" />
+          DTS:ConnectionString="Data Source=DESKTOP-LO8Q0MV\SQLEXPRESS;Initial Catalog=TDC_Staging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{3D063E30-6A66-4AA2-AE2C-E2DDBCE1B8A4}BD2TP;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -35,7 +35,12 @@
       DTS:ObjectName="TPBBDD2.alumno">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="uid=alumno;Dsn=mysql;" />
+          DTS:ConnectionString="uid=alumno;Dsn=TPBBDD2;">
+          <DTS:Password
+            DTS:Name="pwd"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAB34uGnz1n0+bEBls00PvHgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADHnOG/Eo5xv2t7qwts7i8fPyz1V5DnNRw+PTzri18MsQAAAAAOgAAAAAIAACAAAADlL9HGwl5Mwv5EdPBhCDHZOCU0aNuF6IDfaC3SIEFM5iAAAABjvQFFt0vvYb2DixYKsE2xN6bubimOrk5/MAyxs5YMK0AAAACYXeVh8ItOtIzEozzTiz4QHGn2inZu4n4CeiW8tCl/8D3gr57cPFkReEtMKzPdZ4GQ/UsW3zgc9DdWGJ7JyKtX</DTS:Password>
+        </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -271,8 +276,8 @@
               <connections>
                 <connection
                   refId="Package\Base de datos Mysql\billing_details_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -612,8 +617,8 @@
               <connections>
                 <connection
                   refId="Package\Base de datos Mysql\billing_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -966,8 +971,8 @@
               <connections>
                 <connection
                   refId="Package\Base de datos Mysql\discounts_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1276,8 +1281,8 @@
               <connections>
                 <connection
                   refId="Package\Base de datos Mysql\prices_stg.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[BD2TP]"
-                  connectionManagerRefId="Package.ConnectionManagers[BD2TP]"
+                  connectionManagerID="Package.ConnectionManagers[Staging]"
+                  connectionManagerRefId="Package.ConnectionManagers[Staging]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{6196AEC1-4DD1-4CFC-A9FC-FA554D6EB764}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{A2A37DE2-1FDE-4DE0-BF61-EFFB6499DC87}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -61,7 +61,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[customer_r_stg]</property>
+                  name="OpenRowset">[customer_r_stg]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
