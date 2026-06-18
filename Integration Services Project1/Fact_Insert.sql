@@ -27,7 +27,7 @@ SELECT
     vnt.Litros_Vendidos,
     vnt.Edad_En_Venta,
     vnt.Antiguedad_Empleado
-FROM [BD2TP].[dbo].[Ventas_vw] vnt
+FROM [TDC_Staging].[dbo].[Ventas_vw] vnt
 LEFT JOIN [DW_Ventas].[dbo].[Dim_Tiempo] t ON vnt.ID_Tiempo_FK = t.Fecha
 LEFT JOIN [DW_Ventas].[dbo].[Dim_Cliente] c ON vnt.ID_Cliente_FK = c.Customer_ID
 LEFT JOIN [DW_Ventas].[dbo].[Dim_Empleado] e ON vnt.ID_Empleado_FK = e.Employee_ID
