@@ -1,4 +1,5 @@
 INSERT INTO [DW_Ventas].[dbo].[Fact_Ventas] (
+    [ID_Billing],
     [ID_Tiempo_FK],
     [ID_Cliente_FK],
     [ID_Empleado_FK],
@@ -6,7 +7,7 @@ INSERT INTO [DW_Ventas].[dbo].[Fact_Ventas] (
     [ID_Age_Group_FK],
     [Cantidad_Unidades],
     [Precio_Unitario],
-    [Descuento_Unitario],
+    [Monto_Bruto_Linea],
     [Monto_Descuento],
     [Monto_Venta_Neto],
     [Litros_Vendidos],
@@ -14,6 +15,7 @@ INSERT INTO [DW_Ventas].[dbo].[Fact_Ventas] (
     [Antiguedad_Empleado]
 )
 SELECT 
+    vnt.ID_Billing,
     ISNULL(t.ID_Tiempo_SK, -1) AS ID_Tiempo_FK,
     ISNULL(c.ID_Cliente_SK, -1) AS ID_Cliente_FK,
     ISNULL(e.ID_Empleado_SK, -1) AS ID_Empleado_FK,
@@ -21,7 +23,7 @@ SELECT
     ISNULL(ag.ID_Age_Group_SK, 5) AS ID_Age_Group_FK,
     vnt.Cantidad_Unidades,
     vnt.Precio_Unitario,
-    vnt.Descuento_Unitario,
+    vnt.Monto_Bruto_Linea,
     vnt.Monto_Descuento,
     vnt.Monto_Venta_Neto,
     vnt.Litros_Vendidos,
